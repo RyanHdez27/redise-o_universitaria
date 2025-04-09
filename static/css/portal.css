@@ -1,0 +1,229 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', sans-serif;
+  }
+  
+  body {
+    background-color: #f6f7fb;
+  }
+  
+  .layout {
+    display: flex;
+    height: 100vh;
+  }
+  
+
+  .sidebar {
+    width: 80px;
+    background-color: #2f3a87;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 20px;
+  }
+  
+  .profile img {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    margin-bottom: 30px;
+  }
+  
+  .menu a {
+    color: white;
+    font-size: 24px;
+    margin: 20px 0;
+    transition: transform 0.2s, background 0.3s;
+    padding: 10px;
+    border-radius: 10px;
+  }
+  
+  .menu a:hover {
+    background: #4451a3;
+    transform: scale(1.1);
+  }
+  
+
+  .notas {
+    width: 260px;
+    background: white;
+    padding: 20px;
+    border-right: 1px solid #e0e0e0;
+  }
+  
+  .header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+  }
+  
+  .header h3 {
+    font-size: 18px;
+    color: #333;
+  }
+  
+  .header .add {
+    background: #2f3a87;
+    color: white;
+    border: none;
+    border-radius: 50%;
+    width: 28px;
+    height: 28px;
+    cursor: pointer;
+  }
+  
+  .semestres .semestre {
+    padding: 10px;
+    margin-bottom: 15px;
+    border-left: 3px solid transparent;
+    cursor: pointer;
+  }
+  
+  .semestres .semestre.activo {
+    background-color: #edf0ff;
+    border-left: 3px solid #2f3a87;
+    border-radius: 4px;
+  }
+  
+  .semestre h4 {
+    font-size: 14px;
+    color: #2f3a87;
+  }
+  
+  .semestre p, .semestre span {
+    font-size: 12px;
+    color: #777;
+  }
+  
+ 
+  .nota-detallada {
+    flex-grow: 1;
+    padding: 20px;
+    overflow-y: auto;
+  }
+  
+  .nota-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .nota-header button {
+    background: none;
+    border: none;
+    font-weight: bold;
+    color: #2f3a87;
+    margin-right: 10px;
+    cursor: pointer;
+  }
+  
+  .acciones i {
+    margin-left: 10px;
+    font-size: 18px;
+    color: #888;
+    cursor: pointer;
+  }
+  
+  .nota-img {
+    width: 100%;
+    border-radius: 12px;
+    margin: 20px 0;
+  }
+  
+  .nota-detallada h2 {
+    color: #2f3a87;
+    margin-bottom: 10px;
+  }
+  
+  .nota-detallada p {
+    color: #444;
+    line-height: 1.5;
+  }
+  
+  .drive {
+    background: #f3f3f3;
+    padding: 15px;
+    border-radius: 10px;
+    margin: 20px 0;
+  }
+  
+  .mensaje {
+    display: flex;
+    gap: 10px;
+    margin-top: 10px;
+  }
+  
+  .mensaje input {
+    flex: 1;
+    padding: 10px;
+    border-radius: 6px;
+    border: 1px solid #ccc;
+  }
+  
+  .mensaje button {
+    background-color: #2f3a87;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 6px;
+    cursor: pointer;
+  }
+  
+
+  .extras {
+    width: 250px;
+    padding: 20px;
+    background: white;
+    border-left: 1px solid #e0e0e0;
+  }
+  
+  .calendario {
+    background: #fff;
+    padding: 15px;
+    border-radius: 12px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+    margin-bottom: 20px;
+  }
+  
+  .calendario h4 {
+    color: #333;
+    margin-bottom: 10px;
+  }
+  
+  .calendario table {
+    width: 100%;
+    text-align: center;
+    font-size: 12px;
+    color: #555;
+  }
+  
+  .calendario td {
+    padding: 5px;
+    border-radius: 6px;
+    cursor: pointer;
+  }
+  
+  .calendario .activo {
+    background-color: #2f3a87;
+    color: white;
+  }
+  
+  .bitacoras .bitacora {
+    padding: 10px;
+    border-radius: 12px;
+    color: white;
+    margin-bottom: 10px;
+  }
+  
+  .bitacora.uno {
+    background: #d037a0;
+  }
+  
+  .bitacora.dos {
+    background: #2f3a87;
+  }
+  

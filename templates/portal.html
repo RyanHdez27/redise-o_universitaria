@@ -1,12 +1,122 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portal de notas</title>
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/portla.css') }}">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Notas por Semestre</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/portal.css') }}" />
+
+  <link href="https://cdn.jsdelivr.net/npm/remixicon/fonts/remixicon.css" rel="stylesheet">
 </head>
 <body>
-    <h1>portal de notas</h1>
+  <div class="layout">
+
+    <aside class="sidebar">
+      <div class="profile">
+        <img src="{{ url_for('static', filename='images/profile.png') }}" alt="Usuario">
+      </div>
+      <nav class="menu">
+        <a href="#"><i class="ri-link"></i></a>
+        <a href="#"><i class="ri-home-5-line"></i></a>
+        <a href="#"><i class="ri-file-text-line"></i></a>
+        <a href="#"><i class="ri-folder-3-line"></i></a>
+        <a href="#"><i class="ri-settings-3-line"></i></a>
+      </nav>
+    </aside>
+
+
+    <section class="notas">
+      <div class="header">
+        <h3>Notas por <strong>semestre</strong></h3>
+        <button class="add"><i class="ri-add-line"></i></button>
+      </div>
+      <div class="semestres">
+        <div class="semestre activo">
+          <h4>Séptimo Semestre</h4>
+          <p>Ingeniería de Software</p>
+          <span>20 Mar 2025</span>
+        </div>
+        <div class="semestre">
+          <h4>Sexto Semestre</h4>
+          <p>Ingeniería de Software</p>
+          <span>20 Dic 2024</span>
+        </div>
+        <div class="semestre">
+          <h4>Quinto Semestre</h4>
+          <p>Ingeniería de Software</p>
+          <span>20 Sep 2024</span>
+        </div>
+        <div class="semestre">
+          <h4>Cuarto Semestre</h4>
+          <p>Ingeniería de Software</p>
+          <span>20 May 2024</span>
+        </div>
+        <div class="semestre">
+          <h4>Tercer Semestre</h4>
+          <p>Ingeniería de Software</p>
+          <span>20 Feb 2024</span>
+        </div>
+      </div>
+    </section>
+
+    <main class="nota-detallada">
+      <header class="nota-header">
+        <button>Mis notas</button>
+        <button>Bitácoras</button>
+        <div class="acciones">
+          <i class="ri-download-2-line"></i>
+          <i class="ri-share-forward-line"></i>
+          <i class="ri-more-2-line"></i>
+        </div>
+      </header>
+      <img src="nota.jpg" alt="Nota Banner" class="nota-img">
+      <h2>Séptimo Semestre</h2>
+      <p>En séptimo semestre de Ingeniería de Software, los estudiantes suelen ver materias avanzadas enfocadas en el desarrollo, gestión y optimización de software. Este semestre se enfoca en la aplicación práctica de conocimientos adquiridos y, en algunos casos, en el inicio de proyectos de grado o pasantías.</p>
+      <div class="drive">
+        <div>
+          <p><strong>Práctica Universitaria</strong></p>
+          <p>Google Drive</p>
+          <p>correoInstitucional@gmail.com</p>
+        </div>
+      </div>
+      <div class="mensaje">
+        <input type="text" placeholder="Ingresar mensaje">
+        <button>Guardar</button>
+      </div>
+    </main>
+
+
+    <aside class="extras">
+      <div class="calendario">
+        <h4>Marzo 2025</h4>
+        <table>
+          <thead>
+            <tr><th>Lu</th><th>Ma</th><th>Mi</th><th>Ju</th><th>Vi</th><th>Sa</th><th>Do</th></tr>
+          </thead>
+          <tbody>
+            <tr><td> </td><td>1</td><td> </td><td> </td><td> </td><td>1</td><td>2</td></tr>
+
+            <tr><td>3</td><td>4</td><td>5</td><td>6</td><td>7</td><td>8</td><td class="activo">9</td></tr>
+
+            <tr><td>10</td><td>11</td><td>12</td><td>13</td><td>14</td><td>15</td><td>16</td></tr>
+
+            <tr><td>17</td><td>18</td><td>19</td><td>20</td><td>21</td><td>22</td><td>23</td></tr>
+
+            <tr><td>24</td><td>25</td><td>26</td><td>27</td><td>28</td><td>29</td><td>30</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="bitacoras">
+        <div class="bitacora uno">
+          <h5>Registro Semana #1</h5>
+          <p>Registro de la primera semana de practicas empresariales.</p>
+        </div>
+        <div class="bitacora dos">
+          <h5>Registro Semana #2</h5>
+          <p>Registro de la segunda semana de practicas empresariales.</p>
+        </div>
+      </div>
+    </aside>
+  </div>
 </body>
 </html>
