@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Notas por Semestre</title>
   <link rel="stylesheet" href="{{ url_for('static', filename='css/portal.css') }}" />
-
+  <link href="https://cdn.jsdelivr.net/npm/remixicon@3.2.0/fonts/remixicon.css" rel="stylesheet">
   <link href="https://cdn.jsdelivr.net/npm/remixicon/fonts/remixicon.css" rel="stylesheet">
 </head>
 <body>
@@ -30,6 +30,9 @@
         </div>
         <div class="items_menu">
         <a href="#"><i class="ri-settings-3-line"></i></a>
+        </div>
+        <div class="items_menu_logout">
+          <a href="{{ url_for('home') }}" class="logout-btn" title="Logout"><i class="ri-logout-box-line"></i></a>
         </div>
       </nav>
     </aside>
@@ -79,7 +82,7 @@
           <i class="ri-more-2-line"></i>
         </div>
       </header>
-      <img src="nota.jpg" alt="Nota Banner" class="nota-img">
+      <img src="{{ url_for('static', filename='images/banner.jpg') }}" alt="Nota Banner" class="nota-img">
       <h2>Séptimo Semestre</h2>
       <p>En séptimo semestre de Ingeniería de Software, los estudiantes suelen ver materias avanzadas enfocadas en el desarrollo, gestión y optimización de software. Este semestre se enfoca en la aplicación práctica de conocimientos adquiridos y, en algunos casos, en el inicio de proyectos de grado o pasantías.</p>
       <div class="drive">
@@ -104,7 +107,7 @@
             <tr><th>Lu</th><th>Ma</th><th>Mi</th><th>Ju</th><th>Vi</th><th>Sa</th><th>Do</th></tr>
           </thead>
           <tbody>
-            <tr><td> </td><td>1</td><td> </td><td> </td><td> </td><td>1</td><td>2</td></tr>
+            <tr><td> </td><td></td><td> </td><td> </td><td> </td><td>1</td><td>2</td></tr>
 
             <tr><td>3</td><td>4</td><td>5</td><td>6</td><td>7</td><td>8</td><td class="activo">9</td></tr>
 

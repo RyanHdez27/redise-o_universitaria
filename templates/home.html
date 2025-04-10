@@ -7,13 +7,17 @@
     <link rel="stylesheet" href="{{ url_for('static', filename='css/home.css') }}">
 </head>
 <body>
-    <nav>
+    <nav class="navbar">
         <a href="{{ url_for('home') }}">Inicio</a>
         <a href="{{ url_for('login') }}">Login</a>
+        <a href="{{ url_for('ingresar') }}">Login V2</a>
         <a href="{{ url_for('portal') }}">Portal</a>
     </nav>
-    <h1>REDISEÑO DE LA PLATAFORMA DE</h1>
-    <h1>UNIVERSITARIA DE COLOMBIA</h1>
-    
+
+    <main class="main-content">
+        <h1>REDISEÑO DE LA PLATAFORMA DE</h1>
+        <h1>UNIVERSITARIA DE COLOMBIA</h1>
+        <p>Bienvenido a la nueva experiencia digital de la plataforma universitaria.</p>
+    </main>
 </body>
 </html>
