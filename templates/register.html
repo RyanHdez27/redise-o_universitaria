@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Registro</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/login_ll.css') }}">
+</head>
+<body>
+  <div class="container">
+    <div class="left-panel">
+      <a href="{{ url_for('home') }}">
+        <img src="{{ url_for('static', filename='images/Logo_universitaria.png') }}" alt="logo">
+      </a>
+      <h1>Regístrate en Universitaria</h1>
+      <p>Accede a la plataforma según tu rol.</p>
+    </div>
+    <div class="right-panel">
+      <h2>Registro</h2>
+        <form method="POST">
+            <input type="email" name="email" placeholder="Correo institucional" required>
+            <input type="password" name="password" placeholder="Contraseña" required>
+            <select name="role" required>
+                <option value="3">Estudiante</option>
+                <option value="2">Profesor</option>
+                {% if session.get('user_role') == 1 %}
+                  <option value="1">Administrador</option>
+                {% endif %}
+              </select>             
+            <button type="submit">Registrarse</button>
+        </form>      
+    </div>
+  </div>
+</body>
+</html>
