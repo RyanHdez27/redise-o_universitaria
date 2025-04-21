@@ -16,7 +16,7 @@
   
 
   .sidebar {
-    width: 130px;
+    width: 100px;
     background-color: #2f3a87;
     color: white;
     display: flex;
@@ -64,7 +64,7 @@
 }
 
   .notas {
-    width: 600px;
+    width: 400px;
     background: white;
     padding: 20px;
     border-right: 1px solid #e0e0e0;
@@ -194,7 +194,7 @@
   
 
   .extras {
-    width: 700px;
+    width: 400px;
 
     padding: 20px;
     background: white;
@@ -251,4 +251,15 @@
   .bitacora.dos {
     background: #2f3a87;
   }
-  
+
+  .calendario { font-family: Arial, sans-serif; width: 300px; margin: 20px auto; }
+  .calendario table { width: 100%; border-collapse: collapse; }
+  .calendario th, .calendario td { width: 14.28%; text-align: center; padding: 8px; }
+  .activo { background-color: #4CAF50; color: white; border-radius: 50%; }
+  .notas-materias {
+    margin-top: 10px;
+    padding: 10px;
+    border-left: 4px solid #4CAF50;
+    background: #f9f9f9;
+    border-radius: 5px;
+  } 

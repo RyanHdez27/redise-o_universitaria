@@ -32,7 +32,7 @@
         <a href="#"><i class="ri-settings-3-line"></i></a>
         </div>
         <div class="items_menu_logout">
-          <a href="{{ url_for('home') }}" class="logout-btn" title="Logout"><i class="ri-logout-box-line"></i></a>
+          <a href="{{ url_for('ingresar') }}" class="logout-btn" title="Logout"><i class="ri-logout-box-line"></i></a>
         </div>
       </nav>
     </aside>
@@ -44,35 +44,17 @@
         <button class="add"><i class="ri-add-line"></i></button>
       </div>
       <div class="semestres">
-        <div class="semestre">
-          <h4>Séptimo Semestre</h4>
-          <p>Ingeniería de Software</p>
-          <span>20 Mar 2025</span>
-        </div>
-        <div class="semestre">
-          <h4>Sexto Semestre</h4>
-          <p>Ingeniería de Software</p>
-          <span>20 Dic 2024</span>
-        </div>
-        <div class="semestre">
-          <h4>Quinto Semestre</h4>
-          <p>Ingeniería de Software</p>
-          <span>20 Sep 2024</span>
-        </div>
-        <div class="semestre">
-          <h4>Cuarto Semestre</h4>
-          <p>Ingeniería de Software</p>
-          <span>20 May 2024</span>
-        </div>
-        <div class="semestre">
-          <h4>Tercer Semestre</h4>
-          <p>Ingeniería de Software</p>
-          <span>20 Feb 2024</span>
-        </div>
-      </div>
+        {% for nombre, datos in semestres.items() %}
+          <div class="semestre" onclick="mostrarDetalle('{{ nombre }}')">
+            <h4>{{ nombre }}</h4>
+            <p>Ingeniería de Software</p>
+            <span>{{ datos.fecha }}</span>
+          </div>
+        {% endfor %}
+      </div>      
     </section>
 
-    <main class="nota-detallada">
+    <main class="nota-detallada" id="detalle-semestre">
       <header class="nota-header">
         <button>Mis notas</button>
         <button>Bitácoras</button>
@@ -83,39 +65,34 @@
         </div>
       </header>
       <img src="{{ url_for('static', filename='images/banner.jpg') }}" alt="Nota Banner" class="nota-img">
-      <h2>Séptimo Semestre</h2>
-      <p>En séptimo semestre de Ingeniería de Software, los estudiantes suelen ver materias avanzadas enfocadas en el desarrollo, gestión y optimización de software. Este semestre se enfoca en la aplicación práctica de conocimientos adquiridos y, en algunos casos, en el inicio de proyectos de grado o pasantías.</p>
-      <div class="drive">
-        <div>
-          <p><strong>Práctica Universitaria</strong></p>
-          <p>Google Drive</p>
-          <p>correoInstitucional@gmail.com</p>
-        </div>
-      </div>
-      <div class="mensaje">
-        <input type="text" placeholder="Ingresar mensaje">
-        <button>Guardar</button>
-      </div>
+      <h2 id="nombre-semestre">Selecciona un semestre</h2>
+      <p id="descripcion-semestre"></p>
+      <div class="notas-materias" id="notas-materias"></div>
     </main>
-
-
+    
     <aside class="extras">
       <div class="calendario">
-        <h4>Marzo 2025</h4>
+        <h4>{{ mes | month_name }} {{ año }}</h4>
         <table>
           <thead>
             <tr><th>Lu</th><th>Ma</th><th>Mi</th><th>Ju</th><th>Vi</th><th>Sa</th><th>Do</th></tr>
           </thead>
           <tbody>
-            <tr><td> </td><td></td><td> </td><td> </td><td> </td><td>1</td><td>2</td></tr>
-
-            <tr><td>3</td><td>4</td><td>5</td><td>6</td><td>7</td><td>8</td><td class="activo">9</td></tr>
-
-            <tr><td>10</td><td>11</td><td>12</td><td>13</td><td>14</td><td>15</td><td>16</td></tr>
-
-            <tr><td>17</td><td>18</td><td>19</td><td>20</td><td>21</td><td>22</td><td>23</td></tr>
-
-            <tr><td>24</td><td>25</td><td>26</td><td>27</td><td>28</td><td>29</td><td>30</td></tr>
+            {% for semana in calendario_mes %}
+              <tr>
+                {% for dia in semana %}
+                  {% if dia == 0 %}
+                    <td></td>
+                  {% else %}
+                    {% if hoy.day == dia and hoy.month == mes and hoy.year == año %}
+                      <td class="activo">{{ dia }}</td>
+                    {% else %}
+                      <td>{{ dia }}</td>
+                    {% endif %}
+                  {% endif %}
+                {% endfor %}
+              </tr>
+            {% endfor %}
           </tbody>
         </table>
       </div>
@@ -133,3 +110,21 @@
   </div>
 </body>
 </html>
+<script>
+  const semestres = {{ semestres | tojson }};
+
+  function mostrarDetalle(nombre) {
+    const data = semestres[nombre];
+    document.getElementById("nombre-semestre").textContent = nombre;
+    document.getElementById("descripcion-semestre").textContent = data.descripcion;
+
+    const notasDiv = document.getElementById("notas-materias");
+    notasDiv.innerHTML = ""; // limpiar antes
+
+    data.materias.forEach(materia => {
+      const linea = document.createElement("p");
+      linea.innerHTML = `<strong>${materia.nombre}:</strong> ${materia.nota}`;
+      notasDiv.appendChild(linea);
+    });
+  }
+</script>

@@ -147,3 +147,47 @@ button:hover {
     width: 24px;
     height: 24px;
 }
+
+.password-wrapper {
+    position: relative;
+}
+
+.password-wrapper input {
+    width: 100%;
+    padding-right: 40px; /* espacio para el icono */
+}
+
+.toggle-password {
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    cursor: pointer;
+    color: #004488;
+    font-size: 18px;
+}
+
+
+
+
+.input-group select {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    background-color: #fff;
+    color: #002244;
+    font-size: 14px;
+    font-family: 'Segoe UI', sans-serif;
+    background-image: url("data:image/svg+xml;charset=US-ASCII,%3Csvg xmlns='http://www.w3.org/2000/svg' width='14' height='10'%3E%3Cpath fill='%23002244' d='M7 10L0 0h14z'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 10px center;
+    background-size: 12px;
+
+    /* Para ocultar la flechita nativa del navegador */
+    -webkit-appearance: none; /* Safari/Chrome */
+    -moz-appearance: none;    /* Firefox */
+    appearance: none;         /* Estándar */
+    cursor: pointer;
+}
+
